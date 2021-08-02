@@ -41,6 +41,7 @@ local function RivalScore(pn,rival)
                     
                     if scores[rival] then
                             self:settext(string.upper(PROFILEMAN:GetPlayerName(pn)))
+							self:maxwidth(120)
                     else
                         self:settext("")
                     end;

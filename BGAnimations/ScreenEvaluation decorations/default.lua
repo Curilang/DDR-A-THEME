@@ -179,7 +179,7 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 				s:xy(pn==PLAYER_1 and _screen.cx-490 or _screen.cx+490,_screen.cy-270)
 				s:horizalign(pn==PLAYER_1 and right or left)
 				s:settext(string.upper(PROFILEMAN:GetPlayerName(pn)))
-				s:draworder(50):maxwidth(200):diffuse(color("#feec0a")):zoom(0.8);
+				s:draworder(50):maxwidth(150):diffuse(color("#feec0a")):zoom(0.8);
 			end,
 			OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -300 or 300) end,
         };

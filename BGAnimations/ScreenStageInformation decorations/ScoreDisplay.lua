@@ -386,7 +386,7 @@ t[#t+1]=Def.ActorFrame{
 		s:y(SCREEN_CENTER_Y+230):horizalign(left):strokecolor(Color("Outline")) end,
 		OnCommand=function(self)
 			self:sleep(SleepOffset+0.2):linear(0.05)
-			self:x(pn == PLAYER_1 and SCREEN_LEFT+OffsetX-170 or SCREEN_RIGHT-OffsetX-170);
+			self:x(pn == PLAYER_1 and SCREEN_LEFT+OffsetX-177 or SCREEN_RIGHT-OffsetX-177);
 		end;
 	};
 
@@ -394,7 +394,7 @@ t[#t+1]=Def.ActorFrame{
 		InitCommand=function(s) s:x(pn == PLAYER_1 and SCREEN_LEFT-OffsetX+105 or SCREEN_RIGHT+OffsetX+105)
 		s:y(SCREEN_CENTER_Y+230):zoom(1) end,
 		OnCommand=function(s) s:sleep(SleepOffset+0.2):linear(0.05)
-		s:x(pn == PLAYER_1 and SCREEN_LEFT+OffsetX+105 or SCREEN_RIGHT-OffsetX+105) end,
+		s:x(pn == PLAYER_1 and SCREEN_LEFT+OffsetX+119 or SCREEN_RIGHT-OffsetX+119) end,
 	};
 };
 end;

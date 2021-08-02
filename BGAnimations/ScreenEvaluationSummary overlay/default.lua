@@ -483,53 +483,26 @@ for pn in ivalues(PlayerNumber) do
 	end;
 end;
 
-
+for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 --Player1
-t[#t+1] = Def.ActorFrame {
-	LoadActor(THEME:GetPathB("ScreenEvaluation","decorations/coopgu_bar_player"))..{
-		InitCommand=cmd(x,SCREEN_LEFT+60;y,SCREEN_CENTER_Y-271;player,PLAYER_1;zoom,1);
-		OffCommand=cmd(linear,0.15;addx,-300);
-	};
+	t[#t+1] = Def.ActorFrame{ 
+		Def.Sprite{
+			Texture=THEME:GetPathB("ScreenEvaluation","decorations/coopgu_bar_player"),
+			InitCommand=function(s) s:xy(pn==PLAYER_1 and SCREEN_LEFT+60 or SCREEN_RIGHT-60,_screen.cy-271):zoomx(pn==PLAYER_1 and 1 or -1) end,
+			OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -300 or 300) end,
+		};
 --Name
-	LoadFont("_dispatrox 32px").. {
-		InitCommand=function(self)
-			local dispnameP1 = PROFILEMAN:GetProfile(PLAYER_1):GetDisplayName();
-			local dispnamelengthP1 = string.len(dispnameP1);
-				self:player(PLAYER_1);
-				self:horizalign(right);
-				self:settext(string.upper(dispnameP1));
-				self:x(SCREEN_CENTER_X-490);self:y(SCREEN_CENTER_Y-270);
-				self:draworder(50);
-				self:maxwidth(200)
-				self:diffuse(color("#feec0a"));
-				self:zoom(0.8);
-		end;
-		OffCommand=cmd(linear,0.15;addx,-300);	
-	};
+		Def.BitmapText{
+			Font="_dispatrox 32px",
+			InitCommand=function(s) 
+				s:xy(pn==PLAYER_1 and _screen.cx-490 or _screen.cx+490,_screen.cy-270)
+				s:horizalign(pn==PLAYER_1 and right or left)
+				s:settext(string.upper(PROFILEMAN:GetPlayerName(pn)))
+				s:draworder(50):maxwidth(150):diffuse(color("#feec0a")):zoom(0.8);
+			end,
+			OffCommand=function(s) s:sleep(0.2):linear(0.2):addx(pn==PLAYER_1 and -300 or 300) end,
+        };
 };
-
-t[#t+1] = Def.ActorFrame {
---Player2
-	LoadActor(THEME:GetPathB("ScreenEvaluation","decorations/coopgu_bar_player"))..{
-		InitCommand=cmd(x,SCREEN_RIGHT-60;y,SCREEN_CENTER_Y-271;player,PLAYER_2;zoomx,-1;zoomy,1);
-		OffCommand=cmd(linear,0.15;addx,300);
-	};
---Name
-	LoadFont("_dispatrox 32px").. {
-		InitCommand=function(self)
-			local dispnameP2 = PROFILEMAN:GetProfile(PLAYER_2):GetDisplayName();
-			local dispnamelengthP2 = string.len(dispnameP2);
-				self:player(PLAYER_2);
-				self:horizalign(left);
-				self:settext(string.upper(dispnameP2));
-				self:x(SCREEN_CENTER_X+490);self:y(SCREEN_CENTER_Y-270);
-				self:draworder(50);
-				self:maxwidth(200)
-				self:diffuse(color("#feec0a"));
-				self:zoom(0.8);
-		end;
-		OffCommand=cmd(linear,0.15;addx,300);
-	};
-};
+end;
 
 return t

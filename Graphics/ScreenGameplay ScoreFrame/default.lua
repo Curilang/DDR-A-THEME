@@ -59,8 +59,9 @@ for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
 			Def.BitmapText{
             Font="_dispatrox 32px",
             InitCommand=function(s)
-                s:settext(string.upper(PROFILEMAN:GetPlayerName(pn))):diffuse(color("#feec0a")):xy(pn==PLAYER_1 and 80 or 92,0)
-                :zoom(0.72):maxwidth(200)
+                s:settext(string.upper(PROFILEMAN:GetPlayerName(pn))):diffuse(color("#feec0a"))
+				:xy(pn==PLAYER_1 and 76 or 92,0)
+                :zoom(0.72):maxwidth(180)
             end,
         };
             Def.ActorFrame{

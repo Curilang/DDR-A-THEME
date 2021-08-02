@@ -204,7 +204,7 @@ function LoadPlayerStuff(Player)
 	t[#t+1] = LoadFont("ProfileText 24px") .. {
 		Name = 'SelectedProfileText';
     InitCommand=function(self)
-      (cmd(uppercase,true;xy,-180,-66;halign,0;zoomy,0.7;diffusealpha,0;maxwidth,400))(self);
+      (cmd(uppercase,true;xy,-180,-66;halign,0;zoomy,0.7;diffusealpha,0;maxwidth,250))(self);
     end;
 		OnCommand=cmd(sleep,0.7;linear,0.2;diffusealpha,1);
     OffCommand=function(self)
