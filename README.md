@@ -11,6 +11,7 @@ Hey you guys! This is Curilang now in Github, please follow the instructions and
 1) Change your region in the file "Region.lua", this file has to be in Themes folder, not inside the theme.
 
    https://github.com/Curilang/Region.lua-file
+
 Please download the Region.lua file, with it the theme won't work!
 
 2) VERY IMPORTANT!, Configure your buttons, specially "MenuLeft, MenuRight, MenuUp, MenuDown". This is for use the
