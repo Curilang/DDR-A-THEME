@@ -11,7 +11,7 @@ local x_table = {
 
 
 --toasty loader
-if GetUserPref("FirstReMIX_Cutin")=='true' then
+if GetUserPref("OptionRowCutin")=='true' then
 	if show_cutins then
 	--use ipairs here because i think it expects P1 is loaded before P2
 		for _, pn in ipairs(GAMESTATE:GetEnabledPlayers()) do
