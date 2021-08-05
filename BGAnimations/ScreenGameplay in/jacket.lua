@@ -13,6 +13,7 @@ return Def.ActorFrame {
 				song:GetDisplayFullTitle() == "PANIC HOLIC" or
 				song:GetDisplayFullTitle() == "MAX 360" or
 				song:GetDisplayFullTitle() == "MAX.(period)" or
+				song:GetDisplayFullTitle() == "Valkyrie dimension" or
 				song:GetDisplayFullTitle() == "SABER WING" or
 				song:GetDisplayFullTitle() == "Triple Journey -TAG EDITION-" 
 			then
